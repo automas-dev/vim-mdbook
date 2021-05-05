@@ -1,18 +1,16 @@
 
-let g:mdbook_electron_path = 'electron'
-
 function! s:OnEvent(job_id, data, event) dict
     " OnExited
     silent! call mdbook#StopServer()
 endfunction
 
 let s:server_job = ''
+let s:server_cmd = stdpath('config').'/plugged/vim-mdbook/electron-app/run.sh'
 let s:server_args = {'in_io': 'null', 'out_io': 'null', 'err_io': 'null', 'stoponexit': 'int', 'on_exit': function('s:OnEvent')}
 
 function! mdbook#StartServer()
     if !s:server_job
-        let l:cmd = [g:mdbook_electron_path, expand('<sfile>:p:h:h').'/electron-app']
-        let s:server_job = jobstart(l:cmd, s:server_args)
+        let s:server_job = jobstart(l:server_cmd, s:server_args)
         echomsg "Server job is " . s:server_job
     endif
 endfunction
