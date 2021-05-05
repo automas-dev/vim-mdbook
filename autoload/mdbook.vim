@@ -10,7 +10,7 @@ let s:server_args = {'in_io': 'null', 'out_io': 'null', 'err_io': 'null', 'stopo
 
 function! mdbook#StartServer()
     if !s:server_job
-        let s:server_job = jobstart(l:server_cmd, s:server_args)
+        let s:server_job = jobstart(s:server_cmd, s:server_args)
         echomsg "Server job is " . s:server_job
     endif
 endfunction
