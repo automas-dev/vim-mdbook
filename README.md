@@ -37,6 +37,12 @@ Function                      | Description
 `call mdbook#StopServer()`    | Stop the `mdbook serve` command and close the preview window
 `call mdbook#RestartServer()` | Restart the `mdbook serve` command and reload the preview window
 
+### Configuration
+
+Options                  | Description
+-------------------------|------------
+`g:mdbook_electron_path` | A path to the `electron` executable
+
 ## Licence
 
 vim-mdbook uses the [MIT](LICENCE) Licence
