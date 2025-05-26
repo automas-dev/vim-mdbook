@@ -13,7 +13,7 @@ For [vim-plug](https://github.com/junegunn/vim-plug) add the following to your
 `.vimrc` or `.config/nvim/init.vim`
 
 ```vim
-Plug 'twh2898/vim-mdbook'
+Plug 'automas-dev/vim-mdbook'
 ```
 
 and then restart Vim / Neovim and run `:PlugInstall`.
